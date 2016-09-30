@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.devilmole.mapper.DemoMapper">
+
+    <select id="getSystemUserCount" resultType="java.lang.Integer">
+        select count(*) from T_CRM_SYSTEM_USER t
+    </select>
+
+    <insert id="newProduct">
+        INSERT into T_CRM_PRODUCT (ID,PRODUCT_NAME,CREATE_TIME) VALUES
+        (#{ID,jdbcType=VARCHAR},'testProduct',SYSDATE)
+    </insert>
+
+    <insert id="newCombo">
+        INSERT into T_EC_COMB(ID,COMB_CODE,CREATE_TIME) VALUES
+        ((#{param1,jdbcType=VARCHAR},#{param23,jdbcType=VARCHAR},SYSDATE)
+    </insert>
+</mapper>

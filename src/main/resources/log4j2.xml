@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <RollingFile name="RollingFile" fileName="${log4j:configParentLocation}/logs/app.log"
+                     filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="20 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+        <File name="SqlFile" fileName="${log4j:configParentLocation}/logs/sql.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="ErrorFile" fileName="${log4j:configParentLocation}/logs/Error.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <!--<File name="ServiceFile" fileName="${log4j:configParentLocation}/logs/service.log">-->
+            <!--<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>-->
+        <!--</File>-->
+    </Appenders>
+    <Loggers>
+        <logger name="org.devilmole.mapper" level="trace" additivity="true">
+            <AppenderRef ref="SqlFile" />
+            <AppenderRef ref="Console" />
+        </logger>
+        <!--<logger name="org.devilmole.controller" level="debug" additivity="false">-->
+            <!--<AppenderRef ref="ControllerFile" />-->
+            <!--<AppenderRef ref="Console"/>-->
+        <!--</logger>-->
+        <!--<logger name="org.devilmole.service" level="debug" additivity="false">-->
+            <!--<AppenderRef ref="ServiceFile" />-->
+        <!--</logger>-->
+        <logger name="org.devilmole" level="error" additivity="true">
+            <AppenderRef ref="ErrorFile" />
+            <AppenderRef ref="Console" />
+            <!--<AppenderRef ref="Console" />-->
+        </logger>
+        <!--<logger name="org.devilmole" level="debug" additivity="true">-->
+            <!--<AppenderRef ref="SqlFile" />-->
+        <!--</logger>-->
+        <Root level="debug">
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

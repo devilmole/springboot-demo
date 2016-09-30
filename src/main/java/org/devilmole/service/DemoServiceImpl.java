@@ -1,0 +1,34 @@
+package org.devilmole.service;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.devilmole.mapper.DemoMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.UUID;
+
+/**
+ * Created by Administrator on 2016/9/22 0022.
+ */
+@Service
+public class DemoServiceImpl implements DemoService {
+
+    private static Logger logger = LogManager.getLogger(DemoServiceImpl.class);
+    @Autowired
+    private DemoMapper demoMapper;
+
+    public int getSystemUserCount(){
+        logger.info("here getSystemUserCount");
+        logger.error("error getSystemUserCount");
+        return demoMapper.getSystemUserCount();
+    }
+
+    @Transactional
+    public void testTrans(){
+        String id= UUID.randomUUID().toString();
+        int a=demoMapper.newProduct(id);
+        int b=demoMapper.newCombo(id,"11011");
+    }
+}
