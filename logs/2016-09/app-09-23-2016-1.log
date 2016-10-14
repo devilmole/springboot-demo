@@ -3724,7 +3724,7 @@ Positive matches:
       - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.ErrorAttributes; SearchStrategy: current) found no beans (OnBeanCondition)
 
    ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration matched
-      - No error template view detected (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)
+      - No error templates view detected (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)
       - matched (OnPropertyCondition)
 
    ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#beanNameViewResolver matched
@@ -4164,7 +4164,7 @@ Negative matches:
       - required @ConditionalOnClass classes not found: org.flywaydb.core.Flyway (OnClassCondition)
 
    FreeMarkerAutoConfiguration did not match
-      - required @ConditionalOnClass classes not found: freemarker.template.Configuration,org.springframework.ui.freemarker.FreeMarkerConfigurationFactory (OnClassCondition)
+      - required @ConditionalOnClass classes not found: freemarker.templates.Configuration,org.springframework.ui.freemarker.FreeMarkerConfigurationFactory (OnClassCondition)
 
    GroovyTemplateAutoConfiguration did not match
       - required @ConditionalOnClass classes not found: groovy.text.markup.MarkupTemplateEngine (OnClassCondition)
@@ -4340,7 +4340,7 @@ Negative matches:
       - required @ConditionalOnClass classes not found: com.samskivert.mustache.Mustache (OnClassCondition)
 
    Neo4jDataAutoConfiguration did not match
-      - required @ConditionalOnClass classes not found: org.neo4j.ogm.session.Neo4jSession,org.springframework.data.neo4j.template.Neo4jOperations (OnClassCondition)
+      - required @ConditionalOnClass classes not found: org.neo4j.ogm.session.Neo4jSession,org.springframework.data.neo4j.templates.Neo4jOperations (OnClassCondition)
 
    Neo4jRepositoriesAutoConfiguration did not match
       - required @ConditionalOnClass classes not found: org.neo4j.ogm.session.Neo4jSession,org.springframework.data.neo4j.repository.GraphRepository (OnClassCondition)
@@ -8516,7 +8516,7 @@ Positive matches:
       - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.ErrorAttributes; SearchStrategy: current) found no beans (OnBeanCondition)
 
    ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration matched
-      - No error template view detected (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)
+      - No error templates view detected (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)
       - matched (OnPropertyCondition)
 
    ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#beanNameViewResolver matched
@@ -8956,7 +8956,7 @@ Negative matches:
       - required @ConditionalOnClass classes not found: org.flywaydb.core.Flyway (OnClassCondition)
 
    FreeMarkerAutoConfiguration did not match
-      - required @ConditionalOnClass classes not found: freemarker.template.Configuration,org.springframework.ui.freemarker.FreeMarkerConfigurationFactory (OnClassCondition)
+      - required @ConditionalOnClass classes not found: freemarker.templates.Configuration,org.springframework.ui.freemarker.FreeMarkerConfigurationFactory (OnClassCondition)
 
    GroovyTemplateAutoConfiguration did not match
       - required @ConditionalOnClass classes not found: groovy.text.markup.MarkupTemplateEngine (OnClassCondition)
@@ -9132,7 +9132,7 @@ Negative matches:
       - required @ConditionalOnClass classes not found: com.samskivert.mustache.Mustache (OnClassCondition)
 
    Neo4jDataAutoConfiguration did not match
-      - required @ConditionalOnClass classes not found: org.neo4j.ogm.session.Neo4jSession,org.springframework.data.neo4j.template.Neo4jOperations (OnClassCondition)
+      - required @ConditionalOnClass classes not found: org.neo4j.ogm.session.Neo4jSession,org.springframework.data.neo4j.templates.Neo4jOperations (OnClassCondition)
 
    Neo4jRepositoriesAutoConfiguration did not match
       - required @ConditionalOnClass classes not found: org.neo4j.ogm.session.Neo4jSession,org.springframework.data.neo4j.repository.GraphRepository (OnClassCondition)

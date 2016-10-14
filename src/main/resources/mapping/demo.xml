@@ -6,6 +6,15 @@
         select count(*) from T_CRM_SYSTEM_USER t
     </select>
 
+    <select id="checkSystemUser" resultType="java.lang.Integer">
+        select count(*) from T_CRM_SYSTEM_USER t
+        <where>
+            <if test="_parameter !=null and _parameter != ''">
+                LOGIN_NAME like '%'||#{logName}||'%'
+            </if>
+        </where>
+    </select>
+
     <insert id="newProduct">
         INSERT into T_CRM_PRODUCT (ID,PRODUCT_NAME,CREATE_TIME) VALUES
         (#{ID,jdbcType=VARCHAR},'testProduct',SYSDATE)
@@ -13,6 +22,6 @@
 
     <insert id="newCombo">
         INSERT into T_EC_COMB(ID,COMB_CODE,CREATE_TIME) VALUES
-        ((#{param1,jdbcType=VARCHAR},#{param23,jdbcType=VARCHAR},SYSDATE)
+        ((#{param1,jdbcType=VARCHAR},#{param2,jdbcType=VARCHAR},SYSDATE)
     </insert>
 </mapper>

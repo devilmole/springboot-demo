@@ -25,6 +25,16 @@ public class DemoServiceImpl implements DemoService {
         return demoMapper.getSystemUserCount();
     }
 
+    public boolean checkSystemUser(String loginName){
+        int a=demoMapper.checkSystemUser(loginName);
+        logger.info("checkSystemUser------>"+a);
+        if(a>1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     @Transactional
     public void testTrans(){
         String id= UUID.randomUUID().toString();

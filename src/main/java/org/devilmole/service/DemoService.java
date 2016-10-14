@@ -7,5 +7,7 @@ public interface DemoService {
 
     int getSystemUserCount();
 
+    boolean checkSystemUser(String loginName);
+
     void testTrans();
 }
