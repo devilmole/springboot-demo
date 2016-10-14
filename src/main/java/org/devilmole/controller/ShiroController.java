@@ -20,8 +20,6 @@ public class ShiroController {
 
     @RequestMapping("/shiro/index")
     public String shiroIndex(){
-        System.out.println("test");
-        System.out.println("test2");
         return "index";
     }
 
