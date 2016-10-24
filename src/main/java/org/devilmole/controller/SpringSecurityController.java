@@ -1,5 +1,7 @@
 package org.devilmole.controller;
 
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.devilmole.service.DemoService;
@@ -28,6 +30,8 @@ public class SpringSecurityController {
         return "index";
     }
 
+    @ApiOperation(value = "测试登陆人权限", notes = "from spring security")
+    @ApiImplicitParam(name = "logName",value = "登陆名",required = false,dataType = "String")
     @PreAuthorize("@demoServiceImpl.checkSystemUser(#logName)")
     @RequestMapping("/index2")
     public String index2(Model model, @RequestParam("logName") String logName) {
