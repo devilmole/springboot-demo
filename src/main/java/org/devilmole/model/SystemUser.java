@@ -5,14 +5,14 @@ import org.springframework.data.annotation.Id;
 /**
  * Created by Administrator on 2016/9/28 0028.
  */
-public class User {
+public class SystemUser {
 
     @Id
     private Long id;
     private String name;
     private int age;
 
-    public User(Long id, String name, int age) {
+    public SystemUser(Long id, String name, int age) {
         this.id = id;
         this.name = name;
         this.age = age;

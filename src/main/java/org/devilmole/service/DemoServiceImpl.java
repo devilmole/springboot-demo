@@ -3,10 +3,12 @@ package org.devilmole.service;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.devilmole.mapper.DemoMapper;
+import org.devilmole.model.SystemUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -40,5 +42,21 @@ public class DemoServiceImpl implements DemoService {
         String id= UUID.randomUUID().toString();
         int a=demoMapper.newProduct(id);
         int b=demoMapper.newCombo(id,"11011");
+    }
+
+    public int createUserService(){
+        return 0;
+    }
+    public int updateUserService(){
+        return 0;
+    }
+    public int deleteUserService(){
+        return 0;
+    }
+    public SystemUser getUserService(Long id){
+        return null;
+    }
+    public List getUserPageService(){
+        return null;
     }
 }
