@@ -154,6 +154,7 @@
 
     <!-- Package as an executable jar -->
     <build>
+        <finalName>vstone-springboot</finalName>
         <resources>
             <!-- Resource Filter -->
             <resource>

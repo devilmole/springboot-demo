@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.devilmole.mapper.DemoMapper;
 import org.devilmole.model.SystemUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.metrics.CounterService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,11 +18,23 @@ import java.util.UUID;
 @Service
 public class DemoServiceImpl implements DemoService {
 
+    /**
+     * actuate 标记值
+     */
+    @Autowired
+    private CounterService counterService;
+//
+//
+//    public DemoServiceImpl(CounterService counterService) {
+//        this.counterService = counterService;
+//    }
+
     private static Logger logger = LogManager.getLogger(DemoServiceImpl.class);
     @Autowired
     private DemoMapper demoMapper;
 
     public int getSystemUserCount(){
+        counterService.increment("getSystemUserCount check times");
         logger.info("here getSystemUserCount");
         logger.error("error getSystemUserCount");
         return demoMapper.getSystemUserCount();
