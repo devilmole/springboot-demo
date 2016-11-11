@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.devilmole.mapper.DemoMapper">
+<mapper namespace="org.devilmole.mapper.primary.DemoMapper">
 
     <select id="getSystemUserCount" resultType="java.lang.Integer">
         select count(*) from T_CRM_SYSTEM_USER t

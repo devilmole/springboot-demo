@@ -2,7 +2,8 @@ package org.devilmole.service;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.devilmole.mapper.DemoMapper;
+import org.devilmole.mapper.primary.DemoMapper;
+import org.devilmole.mapper.secondary.Demo2Mapper;
 import org.devilmole.model.SystemUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.metrics.CounterService;
@@ -32,6 +33,8 @@ public class DemoServiceImpl implements DemoService {
     private static Logger logger = LogManager.getLogger(DemoServiceImpl.class);
     @Autowired
     private DemoMapper demoMapper;
+    @Autowired
+    private Demo2Mapper demo2Mapper;
 
     public int getSystemUserCount(){
         counterService.increment("getSystemUserCount check times");
@@ -41,8 +44,9 @@ public class DemoServiceImpl implements DemoService {
     }
 
     public boolean checkSystemUser(String loginName){
+        int b=demo2Mapper.newTestCustom();
         int a=demoMapper.checkSystemUser(loginName);
-        logger.info("checkSystemUser------>"+a);
+        logger.info(b+"------checkSystemUser------>"+a);
         if(a>1){
             return true;
         }else{

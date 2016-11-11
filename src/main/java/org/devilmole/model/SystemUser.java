@@ -2,10 +2,14 @@ package org.devilmole.model;
 
 import org.springframework.data.annotation.Id;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2016/9/28 0028.
  */
-public class SystemUser {
+public class SystemUser implements Serializable {
+
+    private static final long serialVersionUID = -1L;
 
     @Id
     private Long id;

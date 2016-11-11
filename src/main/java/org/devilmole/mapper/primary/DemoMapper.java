@@ -1,4 +1,4 @@
-package org.devilmole.mapper;
+package org.devilmole.mapper.primary;
 
 import org.springframework.stereotype.Component;
 
