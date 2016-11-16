@@ -16,6 +16,9 @@ public class SystemUser implements Serializable {
     private String name;
     private int age;
 
+    public SystemUser(){
+        super();
+    }
     public SystemUser(Long id, String name, int age) {
         this.id = id;
         this.name = name;

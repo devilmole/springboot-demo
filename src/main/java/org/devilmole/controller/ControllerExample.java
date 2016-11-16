@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * Created by Administrator on 2016/10/28 0028.
  */
@@ -21,7 +23,9 @@ public class ControllerExample {
     private DemoService demoService;
 
     @RequestMapping(value = "/indexTest")
-    public String home(Model model){
+    public String home(Model model,HttpSession session){
+        session.setAttribute("self etst","adfas阿凡达");
+        session.setAttribute("test","dabg啊啊");
         System.out.println("inside");
         logger.info("inside logger");
         int a=demoService.getSystemUserCount();

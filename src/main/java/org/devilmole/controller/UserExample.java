@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
 /**
  * Created by Administrator on 2016/9/20 0020.
@@ -67,7 +68,9 @@ public class UserExample {
                             @RequestParam(value = "page", required = true, defaultValue = "0") Integer page,
                                  @ApiParam(value = "Tha page size", required = true)
                             @RequestParam(value = "size", required = true, defaultValue = "10") Integer size,
-                                 HttpServletRequest request, HttpServletResponse response) {
+                                 HttpServletRequest request, HttpServletResponse response,HttpSession session) {
+        System.out.println("userName-------- in session");
+        session.setAttribute("userName", UUID.randomUUID().toString());
         List list=demoService.getUserPageService();
         return list;
     }
