@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * Created by Administrator on 2016/11/14 0014.
  */
 @Component
-@ConfigurationProperties(locations="classpath:application.properties", prefix="spring.redis")
+@ConfigurationProperties(locations="application.properties", prefix="spring.redis")
 public class RedisProperties {
 
     private String host;

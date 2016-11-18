@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AopMonitor {
 
-    private static Logger logger = LogManager.getLogger(AopMonitor.class);
+    private Logger logger = LogManager.getLogger(AopMonitor.class);
 
     @Before("execution(* org.devilmole.service.DemoService.*(..))")
     public void beforeExecu(JoinPoint joinPoint) {

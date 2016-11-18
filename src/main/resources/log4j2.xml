@@ -19,6 +19,13 @@
         <File name="ErrorFile" fileName="${log4j:configParentLocation}/logs/Error.log">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </File>
+        <NoSql name="databaseAppender">
+            <MongoDb databaseName="devilmole" collectionName="test1" server="192.168.52.112:27017"
+                     username="test" password="111111" />
+        </NoSql>
+        <Async name="ASYNC_MONGO">
+            <appenderRef ref="databaseAppender"/>
+        </Async>
         <!--<File name="ServiceFile" fileName="${log4j:configParentLocation}/logs/service.log">-->
             <!--<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>-->
         <!--</File>-->
@@ -38,14 +45,14 @@
         <logger name="org.devilmole" level="error" additivity="true">
             <AppenderRef ref="ErrorFile" />
             <AppenderRef ref="Console" />
-            <!--<AppenderRef ref="Console" />-->
+            <AppenderRef ref="ASYNC_MONGO" />
         </logger>
         <!--<logger name="org.devilmole" level="debug" additivity="true">-->
             <!--<AppenderRef ref="SqlFile" />-->
         <!--</logger>-->
         <Root level="debug">
             <AppenderRef ref="RollingFile"/>
-            <AppenderRef ref="Console" />
+            <AppenderRef ref="Console" level="INFO" />
         </Root>
     </Loggers>
 </Configuration>

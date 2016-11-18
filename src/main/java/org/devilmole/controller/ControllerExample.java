@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 @Api(value = "页面跳转测试类",description = "api test")
 public class ControllerExample {
 
-    private static Logger logger = LogManager.getLogger(ControllerExample.class);
+    private Logger logger = LogManager.getLogger(ControllerExample.class);
     @Autowired
     private DemoService demoService;
 
@@ -30,7 +30,7 @@ public class ControllerExample {
         logger.info("inside logger");
         int a=demoService.getSystemUserCount();
         logger.debug("a-------->" + a);
-        logger.info("a-----logger--->" + a);
+        logger.error("a-----logger--->" + a);
         model.addAttribute("result",a);
         model.addAttribute("detail",a);
         return "index";
