@@ -43,7 +43,7 @@ public class UserExample {
         System.out.println("createUser param1----->" + param1);
         demoService.createUserService();
         Long id=new Random().nextLong();
-        response.setHeader("Location", request.getRequestURL().append("/").append(id).toString());
+//        response.setHeader("Location", request.getRequestURL().append("/").append(id).toString());
     }
 
     @RequestMapping(value = "/{id}",

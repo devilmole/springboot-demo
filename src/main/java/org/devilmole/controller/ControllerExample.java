@@ -35,4 +35,12 @@ public class ControllerExample {
         model.addAttribute("detail",a);
         return "index";
     }
+
+    @RequestMapping(value = "/LeafTest")
+    public String LeafTest(Model model,HttpSession session){
+        int a=demoService.getSystemUserCount();
+        model.addAttribute("result",a);
+        model.addAttribute("detail",a);
+        return "devilmole/test";
+    }
 }

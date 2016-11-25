@@ -71,7 +71,11 @@ public class DemoServiceImpl implements DemoService {
         return 0;
     }
     public SystemUser getUserService(Long id){
-        return null;
+        SystemUser temp=new SystemUser();
+        temp.setId(id);
+        temp.setName("测试名称");
+        temp.setAge(32);
+        return temp;
     }
     public List getUserPageService(){
         return null;

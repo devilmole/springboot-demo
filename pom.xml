@@ -107,6 +107,12 @@
             <artifactId>log4j-nosql</artifactId>
             <version>2.6.2</version>
         </dependency>
+        <!--httpclient 支持使用-->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.2</version>
+        </dependency>
 
         <!--spring session 支持-->
         <dependency>
@@ -131,7 +137,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
-            <version>1.3.3.RELEASE</version>
+            <!--<version>1.3.3.RELEASE</version>-->
             <scope>compile</scope>
         </dependency>
         <!--json serializer-->
